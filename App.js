@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, Text, ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -74,16 +74,19 @@ const CustomDrawerContent = (props) => {
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
+
 const MainStackNavigator = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} options={{ header: (props) => <Header {...props} /> }} />
-      <Stack.Screen name="Programas" component={ProgramasScreen} options={{ header: (props) => <Header {...props} /> }} />
-      <Stack.Screen name="Programa" component={ProgramaScreen} options={{ header: (props) => <Header {...props} /> }} />
-      <Stack.Screen name="Profile" component={ProfileScreen} options={{ header: (props) => <Header {...props} /> }} />
-      <Stack.Screen name="FichaDeTreinos" component={FichaDeTreinosScreen} options={{ header: (props) => <Header {...props} /> }} />
-      <Stack.Screen name="Exercicios" component={ExerciciosScreen} options={{ header: (props) => <Header {...props} /> }} />
-    </Stack.Navigator>
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps="handled">
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} options={{ header: (props) => <Header {...props} /> }} />
+        <Stack.Screen name="Programas" component={ProgramasScreen} options={{ header: (props) => <Header {...props} /> }} />
+        <Stack.Screen name="Programa" component={ProgramaScreen} options={{ header: (props) => <Header {...props} /> }} />
+        <Stack.Screen name="Profile" component={ProfileScreen} options={{ header: (props) => <Header {...props} /> }} />
+        <Stack.Screen name="FichaDeTreinos" component={FichaDeTreinosScreen} options={{ header: (props) => <Header {...props} /> }} />
+        <Stack.Screen name="Exercicios" component={ExerciciosScreen} options={{ header: (props) => <Header {...props} /> }} />
+      </Stack.Navigator>
+    </ScrollView>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ImageBackground, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -8,7 +8,6 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollViewContainer}>
         <Text style={styles.headerText}>
           <Text style={{ color: '#FFA800' }}>TRANSFORME</Text> SEU TREINO, <Text style={{ color: '#FFA800' }}>OTIMIZE</Text> SEUS <Text style={{ color: '#FFA800' }}>RESULTADOS</Text>
         </Text>
@@ -53,7 +52,6 @@ const HomeScreen = () => {
         </TouchableOpacity>
 
         <View style={{ height: 300 }} />  
-      </ScrollView>
     </View>
   );
 };
@@ -63,9 +61,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#19181D',
     justifyContent: 'center', 
-    alignItems: 'center', 
-  },
-  scrollViewContainer: {
     alignItems: 'center', 
   },
   headerText: {
